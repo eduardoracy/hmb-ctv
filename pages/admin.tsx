@@ -11,7 +11,7 @@ export default function Admin() {
     const [stationName, setStationName] = useState("");
     const [order, setOrder] = useState<number | "">("");
 
-    if (!user || !me?.roles?.admin) return <p style={{ padding: 24 }}>Admins only.</p>;
+    if (!user || !me?.role?.admin) return <p style={{ padding: 24 }}>Admins only.</p>;
 
     async function createStation() {
         if (!stationId.trim() || !stationName.trim() || order === "") return;
